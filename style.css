@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Outfit', 'sans-serif';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.container{
+    display: flex;
+    width: 80vw;
+}
+
+.panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-out;
+}
+
+.panel h3{
+    
+    position: absolute;
+    text-shadow: -2px 2px 10px black;
+    margin: 0px ;
+    
+}
+
+.panel.active {
+    flex: 5;
+}
+.panel.active h3{
+    font-size: 50px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in 0.1s, font-size 0.3s ease-out 0.4s;
+    text-shadow: -2px 2px 10px black;
+}
+.normal h3{
+    font-size: 20px;
+    opacity: 1;
+    transition: opacity 0.2s ease-out 0.5s, font-size 0.3s ease-out 0.4s;
+}
+
+.shrink h3{
+    font-size: 0px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in, font-size 0.2s ease-out;
+}
+@media(max-width: 1280px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        width: 80vh;
+    }
+    .panel{
+        display: flex;
+        flex: 2;
+        background-size: cover;
+    }
+}
